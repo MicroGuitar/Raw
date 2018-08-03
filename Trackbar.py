@@ -5,10 +5,10 @@ def nothing(x):
     pass
 
 #read image
-img_raw8 = np.fromfile('8bitraw.RAW' ,dtype = np.uint8 )
+img_raw8 = np.fromfile('test.RAW' ,dtype = np.uint8 )
 img_raw8 = img_raw8.reshape(960,1280,1)
 #read image
-img_png = cv2.imread('8bitbmp.BMP',0)
+img_png = cv2.imread('test.BMP',0)
 
 # blur & GaussianBlur
 Gaussianblur = cv2.GaussianBlur(img_raw8,(5,5),0)
@@ -25,7 +25,6 @@ cv2.createTrackbar('PNG-High Threshold','bmp_canny',30,255,nothing)
 
 cv2.createTrackbar('RAW-Low Threshold','raw_canny',10,255,nothing)
 cv2.createTrackbar('RAW-High Threshold','raw_canny',30,255,nothing)
-
 
 #process
 while(1):
