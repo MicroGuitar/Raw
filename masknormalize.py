@@ -4,7 +4,7 @@ import numpy as np
 #read img
 raw8 =np.fromfile('2.RAW',np.uint8)
 raw8 = raw8.reshape(960,-1)
-
+print raw8
 with open('1.RAW', 'rb') as binfile:
   bytestring = list(bytearray(binfile.read()))
 
@@ -19,7 +19,7 @@ for i in range(0, len(bytestring), 3):
 
 raw12 = np.array(a)
 raw12 = raw12.reshape(960,-1)
-
+print raw12
 #get mask
 #Gauss Blur
 GaussianBlur_8 = cv2.GaussianBlur(raw8,(5,5),0)
@@ -38,7 +38,7 @@ j = 0
 while(i < 960):
     while(j < 1280):
         if dst_8test[i,j] == 0:
-            dst_8test[i,j] = 20
+            dst_8test[i,j] = 10
         j = j + 1
     j = 0    
     i = i + 1
@@ -67,7 +67,9 @@ cv2.imshow('dst_12',dst_12)
 cv2.imshow('dst8_final',dst8_final)
 cv2.imshow('dst12_final',dst12_final)
 
-
-cv2.waitKey()
+while(1):
+    k = cv2.waitKey(1)&0xFF
+    if k == 27 :
+        break
 cv2.destroyAllWindows()
 
