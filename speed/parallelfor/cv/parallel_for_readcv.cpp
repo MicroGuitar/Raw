@@ -29,7 +29,7 @@ public:
         int e = r.end;
         printf("%d\n",k);
         printf("%d\n",e);
-        for( i = r.start, j = r.start; i != r.end;j = j+2, i = i+3)
+        for( i = r.start, j = r.start/1.5; i != r.end;j = j+2, i = i+3)
         {
             px_bytes[0] = my_a[i];
             px_bytes[1] = my_a[i+1];
