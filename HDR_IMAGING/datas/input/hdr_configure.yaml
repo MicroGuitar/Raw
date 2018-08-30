@@ -1,0 +1,20 @@
+InputPath: "../../datas/output/plug_test_img/"
+img_names: ["1.RAW",  "2.RAW", "3.RAW"]
+
+#merge parameter:
+cali_gamma: 10.0
+LDR_SIZE: 256
+merge_gamma: 1.2
+contrast: 4.0
+saturation: 0
+sigma_space: 2.0
+sigma_color: 2.0
+
+#fusion parameter:
+wcon: 1.0
+wsat: 1.0
+wexp: 0.0
+
+
+
+
